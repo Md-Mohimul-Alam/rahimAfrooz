@@ -1,6 +1,3 @@
-
-import { Vehicle } from '../context/KioskContext';
-
 // Car makes with popular models in Bangladesh
 export const carMakes = [
   'Toyota',
@@ -15,7 +12,7 @@ export const carMakes = [
   'Audi'
 ];
 
-export const carModels: { [key][] } = {
+export const carModels = {
   Toyota: ['Corolla', 'Camry', 'Prius', 'RAV4', 'Land Cruiser', 'Hilux', 'Vios', 'Fortuner', 'Innova'],
   Honda: ['Civic', 'Accord', 'CR-V', 'HR-V', 'City', 'Jazz', 'Vezel'],
   Mitsubishi: ['Pajero', 'Outlander', 'ASX', 'Lancer', 'L200'],
@@ -32,7 +29,7 @@ export const carModels: { [key][] } = {
 export const carYears = Array.from({ length: 21 }, (_, i) => 2025 - i);
 
 // Popular vehicle combinations in Bangladesh
-export const popularVehicles: Vehicle[] = [
+export const popularVehicles = [
   { make: 'Toyota', model: 'Corolla', year: 2022 },
   { make: 'Toyota', model: 'Corolla', year: 2018 },
   { make: 'Toyota', model: 'Corolla', year: 2015 },

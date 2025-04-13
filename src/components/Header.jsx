@@ -11,8 +11,8 @@ const Header = () => {
 
   const translations = {
     title: {
-      en: 'AutoParts',
-      bn: 'অটোপার্টস'
+      en: 'Rahimafrooz SmartParts',
+      bn: 'রহিমাফরুজ স্মার্টপার্টস'
     },
     step: {
       en: 'Step',
