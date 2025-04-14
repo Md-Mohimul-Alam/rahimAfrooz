@@ -1,6 +1,7 @@
 import React from 'react';
 import { useKiosk } from '../context/KioskContext';
 import { Home } from 'lucide-react';
+import logo from '../../public/Logo.jpg'; // Update with your actual path
 
 const Header = () => {
   const { currentStep, setCurrentStep, selectedVehicle, language } = useKiosk();
