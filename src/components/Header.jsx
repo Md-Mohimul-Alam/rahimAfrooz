@@ -50,7 +50,7 @@ const Header = () => {
 
           <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-200 shadow-sm bg-white">
             <img
-              src="../../public/Logo.jpg" // Update with your actual path
+              src="Logo.jpg" // Update with your actual path
               alt="Rahimafrooz Logo"
               className="object-contain w-full h-full"
             />
