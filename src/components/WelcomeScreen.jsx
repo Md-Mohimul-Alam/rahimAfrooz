@@ -9,7 +9,7 @@ const WelcomeScreen = () => {
 
   const translations = {
     welcome: {
-      en: 'Welcome to AutoParts',
+      en: 'Welcome to Rahimafrooz SmartAdvisor',
       bn: 'অটোপার্টসে আপনাকে স্বাগতম',
     },
     subtitle: {

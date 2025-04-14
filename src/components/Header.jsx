@@ -11,12 +11,8 @@ const Header = () => {
 
   const translations = {
     title: {
-      en: 'Rahimafrooz SmartParts',
+      en: 'Rahimafrooz SmartAdvisor',
       bn: 'রহিমাফরুজ স্মার্টপার্টস'
-    },
-    step: {
-      en: 'Step',
-      bn: 'ধাপ'
     },
     steps: {
       welcome: { en: 'Welcome', bn: 'স্বাগতম' },
@@ -38,9 +34,11 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-md p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center gap-4">
+    <header className="bg-white shadow-sm border-b border-gray-200">
+      <div className="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-3">
+
+        {/* Logo and Title */}
+        <div className="flex items-center gap-4 w-full md:w-auto">
           <button
             onClick={resetToWelcome}
             className="p-2 rounded-full hover:bg-gray-100 transition-colors"
@@ -48,27 +46,38 @@ const Header = () => {
           >
             <Home className="text-rahimafrooz-blue" size={24} />
           </button>
-          <h1 className="text-2xl font-bold text-rahimafrooz-blue">
+
+          <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-200 shadow-sm bg-white">
+            <img
+              src="../../public/Logo.jpg" // Update with your actual path
+              alt="Rahimafrooz Logo"
+              className="object-contain w-full h-full"
+            />
+          </div>
+
+          <h1 className="text-xl md:text-2xl font-bold text-rahimafrooz-blue whitespace-nowrap">
             {translations.title[language]}
           </h1>
         </div>
 
+        {/* Steps Tracker */}
         {currentStep !== 'welcome' && (
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="flex items-center flex-wrap justify-center gap-2">
             {['welcome', 'vehicle', 'products', 'details', 'contact'].map((step, index) => (
-              <div
+              <span
                 key={step}
-                className={`px-3 py-1 rounded-full text-sm font-medium ${getStepClass(step)}`}
+                className={`px-3 py-1 text-xs md:text-sm rounded-full font-medium transition-colors ${getStepClass(step)}`}
               >
                 {index + 1}. {translations.steps[step][language]}
-              </div>
+              </span>
             ))}
           </div>
         )}
 
+        {/* Vehicle Info */}
         {selectedVehicle && currentStep !== 'welcome' && (
-          <div className="hidden sm:block text-sm bg-gray-100 px-3 py-1 rounded-lg">
-            {selectedVehicle.make} {selectedVehicle.model} ({selectedVehicle.year})
+          <div className="text-sm bg-gray-100 px-3 py-1 rounded-md text-gray-700 shadow-sm">
+            🚗 {selectedVehicle.make} {selectedVehicle.model} ({selectedVehicle.year})
           </div>
         )}
       </div>
